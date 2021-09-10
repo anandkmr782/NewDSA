@@ -6,6 +6,7 @@ public class MultiplyPrevAndNext {
 		Scanner sc=new Scanner(System.in);
 		System.out.println("Anand");
 		
+		sc.close();	
 
 	}
 
