@@ -1,15 +1,14 @@
 package string;
 
-import java.util.Scanner;
+import java.io.*;
 
 public class LongestCommonSubSequence {
 
-	public static void main(String[] args) {
-		Scanner sc=new Scanner(System.in);
-		String s1=sc.next();
-		String s2=sc.next();
+	public static void main(String[] args) throws IOException {
+		BufferedReader bd=new BufferedReader(new InputStreamReader(System.in));
+		String s1=bd.readLine();
+		String s2=bd.readLine();
 		System.out.println(lcs(s1,s2));
-		sc.close();
 	}
 	static int lcs(String s1,String s2)
 	{
