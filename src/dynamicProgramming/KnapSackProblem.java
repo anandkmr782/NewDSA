@@ -1,21 +1,20 @@
 package dynamicProgramming;
 import  java.io.*;
-import java.util.*;
 public class KnapSackProblem {
 	public static void main(String[] args) throws IOException{
-		Scanner bd=new Scanner(System.in);
-		int m=bd.nextInt();
+		BufferedReader bd=new BufferedReader(new InputStreamReader(System.in));
+		int m=Integer.parseInt(bd.readLine());
 		int w[]=new int[m];
 		for(int i=0;i<m;i++)
 		{
-			w[i]=bd.nextInt();
+			w[i]=Integer.parseInt(bd.readLine().trim());
 		}
 		int cost[]=new int[m];
 		for(int i=0;i<m;i++)
 		{
-			cost[i]=bd.nextInt();
+			cost[i]=Integer.parseInt(bd.readLine().trim());
 		}
-		int totalWeight=bd.nextInt();
+		int totalWeight=Integer.parseInt(bd.readLine());
 		System.out.println(maxProfit(m,w,cost,totalWeight));
 		bd.close();
 	}
