@@ -13,7 +13,6 @@ public class LongestCommonSubSequence {
 	}
 	static int lcs(String s1,String s2)
 	{
-		int res=0;
 		char ch1[]=s1.toCharArray();
 		char ch2[]=s2.toCharArray();
 		int m=ch1.length;
