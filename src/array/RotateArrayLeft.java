@@ -18,6 +18,7 @@ public class RotateArrayLeft {
 		{
 			System.out.print(e+" ");
 		}
+		sc.close();
 
 	}
 	static int[] rotate(int n,int k,int[] arr)
