@@ -11,12 +11,15 @@ public class Solution {
 		{
 			arr[i]=sc.nextInt();
 		}
-		Arrays.sort(arr);
-		for(int e:arr)
-		{
-			System.out.print(e+" ");
-		}
-		
+		int sum=0;
+        for(int i=0;i<n;i++)
+        {
+            for(int j=0;j<n;j++)
+            {
+
+            }
+
+        }
 		sc.close();
 	}
 }
