@@ -6,20 +6,25 @@ public class Solution {
 	public static void main(String[] args) {
 		Scanner sc=new Scanner(System.in);
 		int n=sc.nextInt();
-		int arr[]=new int[n];
-		for(int i=0;i<n;i++)
+		String b=Integer.toBinaryString(n);
+		System.out.println(b);
+		int max=0;
+		int count=0;
+		for(int i=0;i<b.length();i++)
 		{
-			arr[i]=sc.nextInt();
+			if(b.charAt(i)=='1')
+			{
+				count++;
+			}else{
+				count=0;
+			}
+			if(count>max)
+			{
+				max=count;
+			}
 		}
-		int sum=0;
-        for(int i=0;i<n;i++)
-        {
-            for(int j=0;j<n;j++)
-            {
-
-            }
-
-        }
+		System.out.println(max);
 		sc.close();
+
 	}
 }
