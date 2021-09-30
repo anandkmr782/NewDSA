@@ -23,9 +23,9 @@ public class TreeInsertionAndDeletion {
 			return null;
 		}else{
 			root=tt.new Node(data);
-			System.out.println("Enter the left data: "+data);
+			System.out.println("Enter the left data of: "+data);
 			root.left=createTree();
-			System.out.println("Enter the right data: "+data);
+			System.out.println("Enter the right data of: "+data);
 			root.right=createTree();
 		}
 		return root;
