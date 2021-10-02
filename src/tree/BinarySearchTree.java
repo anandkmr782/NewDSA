@@ -14,6 +14,10 @@ public class BinarySearchTree {
             root=insert(root,data);
         }
         preOrder(root);
+        System.out.println();
+        inOrder(root);
+        System.out.println();
+        postOrder(root);
         sc.close();
     }
     public static Node insert(Node root,int data)
@@ -40,6 +44,28 @@ public class BinarySearchTree {
             System.out.print(root.data+" ");
             preOrder(root.left);
             preOrder(root.right);
+        }
+    }
+    public static void inOrder(Node root)
+    {
+        if(root==null)
+        {
+            return;
+        }else{
+            preOrder(root.left);
+            System.out.print(root.data+" ");
+            preOrder(root.right);
+        }
+    }
+    public static void postOrder(Node root)
+    {
+        if(root==null)
+        {
+            return;
+        }else{
+            postOrder(root.left);
+            postOrder(root.right);
+            System.out.print(root.data+" ");
         }
     }
 }
