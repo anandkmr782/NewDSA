@@ -18,7 +18,34 @@ public class BinarySearchTree {
         inOrder(root);
         System.out.println();
         postOrder(root);
+        System.out.print("Enter the number to be Search: ");
+        int s=sc.nextInt();
+        if(isPresent(root,s))
+        {
+            System.out.print("Present");
+        }else{
+            System.out.print("Not Present");
+        }
         sc.close();
+    }
+    static boolean isPresent(Node root,int s)
+    {
+        if(root==null)
+        {
+            return false;
+        }
+        if(root.data==s)
+        {
+            return true;
+        }
+        boolean res1=isPresent(root.right,s);
+        if(res1)
+        {
+            return  true;
+        }
+        boolean res2=isPresent(root.left,s);
+        return res2;
+
     }
     public static Node insert(Node root,int data)
     {
