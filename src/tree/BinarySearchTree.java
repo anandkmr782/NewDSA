@@ -18,15 +18,67 @@ public class BinarySearchTree {
         inOrder(root);
         System.out.println();
         postOrder(root);
+        System.out.println();
         System.out.print("Enter the number to be Search: ");
         int s=sc.nextInt();
         if(isPresent(root,s))
         {
-            System.out.print("Present");
+            System.out.println("Present");
         }else{
-            System.out.print("Not Present");
+            System.out.println("Not Present");
         }
+        if(checkBST(root))
+        {
+            System.out.println("Yes");
+        }else{
+            System.out.println("No");
+        }
+        System.out.print("*****************");
+        int v=sc.nextInt();
+        insertValue(root,v);
+        preOrder(root);
+        System.out.println();
+        inOrder(root);
+        System.out.println();
+        postOrder(root);
         sc.close();
+    }
+    static Node insertValue(Node root,int v)
+    {
+        if(root==null)
+        {
+            root=new Node(v);
+            return root;
+        }
+        if(root.data<v)
+        {
+            root.right=insertValue(root.right,v);
+        }
+        if(root.data>v)
+        {
+            root.left=insertValue(root.left,v);
+        }
+        return root;
+    }
+    static boolean checkBST(Node root)
+    {
+        if(root==null)
+        {
+            return true;
+        }
+        if(root.left!=null && root.left.data>root.data)
+        {
+            return false;
+        }
+        if(root.right!=null && root.right.data<root.data)
+        {
+            return false;
+        }
+        if(!checkBST(root.left) || !checkBST(root.right))
+        {
+            return false;
+        }
+        return true;
     }
     static boolean isPresent(Node root,int s)
     {
@@ -94,6 +146,7 @@ public class BinarySearchTree {
             postOrder(root.right);
             System.out.print(root.data+" ");
         }
+
     }
 }
 class Node{
