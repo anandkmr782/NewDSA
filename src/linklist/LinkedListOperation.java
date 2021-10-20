@@ -2,11 +2,11 @@ package linklist;
 
 import java.util.Scanner;
 
-public class LinkedListInsertionAtAnyPosition {
+public class LinkedListOperation {
     public static void main(String[] args)
     {
-        NodeA head=null;
         Scanner sc=new Scanner(System.in);
+        NodeA head=null;
         int t=sc.nextInt();
         while(t-- >0)
         {
@@ -14,7 +14,18 @@ public class LinkedListInsertionAtAnyPosition {
             head=insert(head,data);
         }
         print(head);
+        int pos=sc.nextInt();
+        int data=sc.nextInt();
+        insertAtPos(head,pos,data);
+        print(head);
+    }
+    static NodeA insertAtPos(NodeA head,int pos,int data)
+    {
+        NodeA toAdd=new NodeA(data);
+        if(pos==1)
+        {
 
+        }
     }
     static void print(NodeA head)
     {
@@ -49,6 +60,5 @@ class NodeA{
     NodeA(int data)
     {
         this.data=data;
-        next=null;
     }
 }
