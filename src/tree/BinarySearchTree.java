@@ -1,5 +1,6 @@
 package tree;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class BinarySearchTree {
@@ -146,7 +147,6 @@ public class BinarySearchTree {
             postOrder(root.right);
             System.out.print(root.data+" ");
         }
-
     }
 }
 class Node{

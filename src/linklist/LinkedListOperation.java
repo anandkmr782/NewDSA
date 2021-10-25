@@ -16,17 +16,9 @@ public class LinkedListOperation {
         print(head);
         int pos=sc.nextInt();
         int data=sc.nextInt();
-        insertAtPos(head,pos,data);
         print(head);
     }
-    static NodeA insertAtPos(NodeA head,int pos,int data)
-    {
-        NodeA toAdd=new NodeA(data);
-        if(pos==1)
-        {
 
-        }
-    }
     static void print(NodeA head)
     {
         NodeA start=head;
