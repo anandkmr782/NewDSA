@@ -14,9 +14,19 @@ public class LinkedListOperation {
             head=insert(head,data);
         }
         print(head);
-        int pos=sc.nextInt();
-        int data=sc.nextInt();
-        print(head);
+        midLinkedList(head);
+        //print(head);
+    }
+    static void midLinkedList(NodeA head)
+    {
+        NodeA slow=head;
+        NodeA fast=head;
+        while(fast!=null && fast.next!=null)
+        {
+            slow=slow.next;
+            fast=fast.next.next;
+        }
+        System.out.println(slow.data);
     }
 
     static void print(NodeA head)

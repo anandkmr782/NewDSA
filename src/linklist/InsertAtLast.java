@@ -14,7 +14,20 @@ public class InsertAtLast {
             head=insert(head,ele);
         }
         display(head);
+        System.out.println();
+        midOfLinkedList(head);
         sc.close();
+    }
+    public static void midOfLinkedList(Node head)
+    {
+        Node slow=head;
+        Node fast=head;
+        while(fast!=null && fast.next!=null)
+        {
+            slow=slow.next;
+            fast=fast.next.next;
+        }
+        System.out.println(slow.data);
     }
     public static Node insert(Node head,int data)
     {
