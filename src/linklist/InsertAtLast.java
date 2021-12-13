@@ -16,7 +16,41 @@ public class InsertAtLast {
         display(head);
         System.out.println();
         midOfLinkedList(head);
+        System.out.println("Enter the position to be insert a linkedlist: ");
+        int pos=sc.nextInt();
+        int data=sc.nextInt();
+        anyPosition(head,pos,data);
+        display(head);
         sc.close();
+    }
+    public static Node anyPosition(Node head,int pos,int data)
+    {
+        Node temp=new Node(data);
+        if(pos==1)
+        {
+            temp.next=head;
+            head=temp;
+            return head;
+        }
+        Node cur=head;
+        int count=0;
+        for(int i=1;i<=pos && cur!=null;i++)
+        {
+            cur=cur.next;
+            if(count==pos)
+            {
+                break;
+            }
+        }
+        if(cur==null)
+        {
+            return head;
+        }
+        temp.next=cur.next;
+        cur.next=temp;
+        head=temp;
+        return head;
+
     }
     public static void midOfLinkedList(Node head)
     {

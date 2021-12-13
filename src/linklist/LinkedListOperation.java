@@ -15,7 +15,32 @@ public class LinkedListOperation {
         }
         print(head);
         midLinkedList(head);
-        //print(head);
+        System.out.println("Enter the value of k: ");
+        int k=sc.nextInt();
+        reverseK(head,k);
+        print(head);
+    }
+    static NodeA reverseK(NodeA head,int k)
+    {
+        if(head==null)
+        {
+            return null;
+        }
+        NodeA curr=head,next=null,prev=null;
+        int count=0;
+        while(curr!=null && count<k)
+        {
+            next=curr.next;
+            curr.next=prev;
+            prev=curr;
+            curr=next;
+            count++;
+        }
+        if(next!=null)
+        {
+            head.next=reverseK(next,k);
+        }
+        return prev;
     }
     static void midLinkedList(NodeA head)
     {
