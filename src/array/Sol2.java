@@ -1,33 +1,55 @@
 package array;
 
+import java.util.*;
+
 public class Sol2 {
     public static void main(String[] args)
     {
-        int arr[]={2,5,6,7,8,8,9,11,22,19,14,15,18};
-        int d=5;
-        int res[]=nearest(arr,d);
-        for(int e:res)
-        {
-            System.out.print(e+" ");
-        }
+       Scanner sc=new Scanner(System.in);
+       String str=sc.nextLine();
+       System.out.println(equiberiumPoint(str));
     }
-    static int[] nearest(int[] arr,int d)
+    static int equiberiumPoint(String str)
     {
-        int res[]=new int[d];
-        for(int i=0;i<d;i++)
+        String p1=str.substring(0,str.length()/2);
+        String p2=str.substring(str.length()/2);
+        char ch1[]=p1.toCharArray();
+        char ch2[]=p2.toCharArray();
+        int l=0,r=p1.length()-1;
+        while(l<r)
         {
-            res[i]=arr[i];
+            if(ch1[l]>ch1[r])
+            {
+                char temp=ch1[l];
+                ch1[l]=ch1[r];
+                ch1[r]=temp;
+                l++;
+                r--;
+            }else {
+                l++;
+                r--;
+            }
         }
-        for(int i=d;i<arr.length-d;i++)
+        int l1=0,r1=p2.length()-1;
+        while(l1<r1)
         {
-            arr[i-d]=arr[i];
+            if(ch2[l1]>ch2[r1])
+            {
+                char temp=ch2[l1];
+                ch2[l1]=ch2[r1];
+                ch2[r1]=temp;
+                l1++;
+                r1--;
+            }else {
+                l1++;
+                r1--;
+            }
         }
-        int j=0;
-        for(int i=arr.length-d;i<arr.length;i++)
-        {
-            arr[i]=res[j];
-            j++;
-        }
-        return arr;
+        String res=String.valueOf(ch1);
+        String res1=String.valueOf(ch2);
+        System.out.println(res+"  "+res1);
+        int sum=Integer.parseInt(res)+Integer.parseInt(res1);
+        return sum;
     }
+
 }
